@@ -7,70 +7,292 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <style>
 body {
-background-color: #f4f4f4;
+background-color: #fcf9f9; /* Slightly warmer background */
 margin: 0;
 padding: 20px;
 display: flex;
 flex-direction: column;
 align-items: center;
-font-family: sans-serif;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: #4a4a4a;
 }
 
+/* Header & Cart Styles */
+header {
+text-align: center;
+margin-bottom: 30px;
+}
+
+header h1 {
+color: #d67b8e; /* Soft pink/rose for Nana's */
+margin-bottom: 5px;
+}
+
+#cart-container {
+max-width: 920px;
+width: 100%;
+background-color: #ffffff;
+border: 2px dashed #d67b8e;
+padding: 20px;
+margin-bottom: 40px;
+border-radius: 15px;
+box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+}
+
+#cart-items {
+list-style-type: none;
+padding: 0;
+}
+
+#cart-items li {
+padding: 10px 0;
+border-bottom: 1px solid #f0f0f0;
+display: flex;
+justify-content: space-between;
+}
+
+.cart-total {
+font-size: 1.2em;
+font-weight: bold;
+text-align: right;
+margin-top: 20px;
+color: #333;
+}
+
+/* Product Slide Styles */
 .slide {
 max-width: 960px;
 width: 100%;
-margin-bottom: 30px;
-box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+margin-bottom: 40px;
+box-shadow: 0px 6px 15px rgba(0,0,0,0.08);
 background-color: #ffffff;
+border-radius: 15px; /* Rounded corners for a softer look */
+overflow: hidden;
 }
 
 .slide img {
 width: 100%;
 display: block;
 }
+
+.product-info {
+padding: 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #fffafb;
+border-top: 1px solid #f0f0f0;
+}
+
+.product-details h3 {
+margin: 0 0 5px 0;
+color: #5a5a5a;
+}
+
+.product-details p {
+margin: 0;
+font-size: 1.1em;
+font-weight: bold;
+color: #d67b8e;
+}
+
+button {
+background-color: #d67b8e;
+color: #ffffff;
+border: none;
+padding: 12px 24px;
+font-size: 16px;
+cursor: pointer;
+font-weight: bold;
+border-radius: 25px; /* Pill-shaped buttons */
+transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+background-color: #bf6577;
+transform: scale(1.02);
+}
+
+.checkout-btn {
+margin-top: 15px;
+background-color: #8caba2; /* Soft sage green for checkout */
+}
+
+.checkout-btn:hover {
+background-color: #76948b;
+}
 </style>
 </head>
 <body>
 
+<header>
+<h1>Nana's Stuffies</h1>
+<p>Handmade with love.</p>
+</header>
+
+<section id="cart-container">
+<h2>Your Basket</h2>
+<ul id="cart-items">
+<li><em>Your basket is currently empty.</em></li>
+</ul>
+<div class="cart-total">Total: $<span id="cart-total-price">0.00</span></div>
+<div style="text-align: right;">
+<button class="checkout-btn" onclick="checkoutCart()">Submit Order Request</button>
+</div>
+</section>
+
 <div class="slide">
-<img src="nanasstuffies_10.png">
+<img src="nanasstuffies_10.png" alt="Stuffy 10">
+<div class="product-info">
+<div class="product-details">
+<h3>Classic Plush Bear</h3>
+<p>$25.00</p>
+</div>
+<button onclick="addToCart('Classic Plush Bear', 25.00)">Add to Basket</button>
+</div>
 </div>
 
 <div class="slide">
-<img src="nanasstuffies_1.png">
+<img src="nanasstuffies_1.png" alt="Stuffy 1">
+<div class="product-info">
+<div class="product-details">
+<h3>Cuddly Bunny</h3>
+<p>$22.50</p>
+</div>
+<button onclick="addToCart('Cuddly Bunny', 22.50)">Add to Basket</button>
+</div>
 </div>
 
 <div class="slide">
-<img src="nanasstuffies_2.png">
+<img src="nanasstuffies_2.png" alt="Stuffy 2">
+<div class="product-info">
+<div class="product-details">
+<h3>Patchwork Puppy</h3>
+<p>$28.00</p>
+</div>
+<button onclick="addToCart('Patchwork Puppy', 28.00)">Add to Basket</button>
+</div>
 </div>
 
 <div class="slide">
-<img src="nanasstuffies_3.png">
+<img src="nanasstuffies_3.png" alt="Stuffy 3">
+<div class="product-info">
+<div class="product-details">
+<h3>Sleepy Kitten</h3>
+<p>$20.00</p>
+</div>
+<button onclick="addToCart('Sleepy Kitten', 20.00)">Add to Basket</button>
+</div>
 </div>
 
 <div class="slide">
-<img src="nanasstuffies_4.png">
+<img src="nanasstuffies_4.png" alt="Stuffy 4">
+<div class="product-info">
+<div class="product-details">
+<h3>Little Lamb</h3>
+<p>$24.00</p>
+</div>
+<button onclick="addToCart('Little Lamb', 24.00)">Add to Basket</button>
+</div>
 </div>
 
 <div class="slide">
-<img src="nanasstuffies_6.png">
+<img src="nanasstuffies_6.png" alt="Stuffy 6">
+<div class="product-info">
+<div class="product-details">
+<h3>Forest Fox</h3>
+<p>$26.50</p>
+</div>
+<button onclick="addToCart('Forest Fox', 26.50)">Add to Basket</button>
+</div>
 </div>
 
 <div class="slide">
-<img src="nanasstuffies_7.png">
+<img src="nanasstuffies_7.png" alt="Stuffy 7">
+<div class="product-info">
+<div class="product-details">
+<h3>Baby Elephant</h3>
+<p>$30.00</p>
+</div>
+<button onclick="addToCart('Baby Elephant', 30.00)">Add to Basket</button>
+</div>
 </div>
 
 <div class="slide">
-<img src="nanasstuffies_8.png">
+<img src="nanasstuffies_8.png" alt="Stuffy 8">
+<div class="product-info">
+<div class="product-details">
+<h3>Happy Hippo</h3>
+<p>$28.00</p>
+</div>
+<button onclick="addToCart('Happy Hippo', 28.00)">Add to Basket</button>
+</div>
 </div>
 
 <div class="slide">
-<img src="nanasstuffies_9.png">
+<img src="nanasstuffies_9.png" alt="Stuffy 9">
+<div class="product-info">
+<div class="product-details">
+<h3>Snuggle Monkey</h3>
+<p>$25.00</p>
+</div>
+<button onclick="addToCart('Snuggle Monkey', 25.00)">Add to Basket</button>
+</div>
 </div>
 
 <div class="slide">
-<img src="nanasstuffies_5.png">
+<img src="nanasstuffies_5.png" alt="Stuffy 5">
+<div class="product-info">
+<div class="product-details">
+<h3>Gentle Giraffe</h3>
+<p>$32.00</p>
 </div>
+<button onclick="addToCart('Gentle Giraffe', 32.00)">Add to Basket</button>
+</div>
+</div>
+
+<script>
+let cart = [];
+let total = 0;
+
+function addToCart(productName, price) {
+    cart.push({ name: productName, price: price });
+    total += price;
+    updateCartDisplay();
+}
+
+function updateCartDisplay() {
+    const cartList = document.getElementById('cart-items');
+    const totalPriceSpan = document.getElementById('cart-total-price');
+    
+    cartList.innerHTML = '';
+    
+    if (cart.length === 0) {
+        cartList.innerHTML = '<li><em>Your basket is currently empty.</em></li>';
+    } else {
+        cart.forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `<span>${item.name}</span> <span>$${item.price.toFixed(2)}</span>`;
+            cartList.appendChild(li);
+        });
+    }
+    
+    totalPriceSpan.innerText = total.toFixed(2);
+}
+
+function checkoutCart() {
+    if (cart.length === 0) {
+        alert("Please add some stuffies to your basket before checking out!");
+        return;
+    }
+    
+    alert(`Thank you! Your POC order for ${cart.length} stuffies totaling $${total.toFixed(2)} has been recorded.`);
+    
+    cart = [];
+    total = 0;
+    updateCartDisplay();
+}
+</script>
 
 </body>
 </html>
