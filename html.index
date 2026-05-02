@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nana's Stuffies</title>
+<style>
+/* Minimalist layout to center the slides */
+body {
+background-color: #f4f4f4;
+margin: 0;
+padding: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+font-family: sans-serif;
+}
+
+/* Slide container styling for a clean, shadowed look */
+.slide {
+max-width: 960px;
+width: 100%;
+margin-bottom: 30px;
+box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+background-color: #ffffff;
+}
+
+/* Ensures the SVG scales perfectly inside the container */
+.slide img {
+width: 100%;
+display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+<img src="Nana’s_Stuffies_1.svg" alt="Nana's Stuffies Slide 1">
+</div>
+
+<div class="slide">
+<img src="Nana’s_Stuffies_2.svg" alt="Nana's Stuffies Slide 2">
+</div>
+
+<div class="slide">
+<img src="Nana’s_Stuffies_3.svg" alt="Nana's Stuffies Slide 3">
+</div>
+
+<div class="slide">
+<img src="Nana’s_Stuffies_4.svg" alt="Nana's Stuffies Slide 4">
+</div>
+
+<div class="slide">
+<img src="Nana’s_Stuffies_5.svg" alt="Nana's Stuffies Slide 5">
+</div>
+
+<div class="slide">
+<img src="Nana’s_Stuffies_6.svg" alt="Nana's Stuffies Slide 6">
+</div>
+
+<div class="slide">
+<img src="Nana’s_Stuffies_7.svg" alt="Nana's Stuffies Slide 7">
+</div>
+
+<div class="slide">
+<img src="Nana’s_Stuffies_8.svg" alt="Nana's Stuffies Slide 8">
+</div>
+
+<div class="slide">
+<img src="Nana’s_Stuffies_9.svg" alt="Nana's Stuffies Slide 9">
+</div>
+
+<div class="slide">
+<img src="Nana’s_Stuffies_10.svg" alt="Nana's Stuffies Slide 10">
+</div>
+
+<div class="slide">
+<img src="Nana’s_Stuffies_11.svg" alt="Nana's Stuffies Slide 11">
+</div>
+
+</body>
+</html>
